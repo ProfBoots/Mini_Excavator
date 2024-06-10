@@ -483,7 +483,7 @@ void loop() {
     vTaskDelay(1);
 
     // forget bluetooth keys if boot button is pressed
-    if (digitalRead(BOOT_BUTTON)) {
+    if (!digitalRead(BOOT_BUTTON)) {
       BP32.forgetBluetoothKeys();
       delay(500);
     }
